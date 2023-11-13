@@ -6,10 +6,13 @@ import { Suspense } from "react";
 import { InvoicesTableSkeleton } from "@/app/ui/skeletons";
 import { fetchInvoicesPages } from "@/app/lib/data";
 import Pagination from "@/app/ui/invoices/pagination";
+import {Metadata} from "next";
 
-export default async function Page({
-                                       searchParams,
-                                   }: {
+export const metadata : Metadata = {
+    title: 'Invoices',
+};
+
+export default async function Page({ searchParams } : {
     searchParams?: {
         query?: string;
         page?: string;
